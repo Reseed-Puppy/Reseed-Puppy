@@ -1,0 +1,20 @@
+<div class="layuimini-container">
+    <blockquote class="layui-elem-quote">
+        <b>注意</b>：<br/>定时器开始、暂停、重起都是在下一分钟开始生效!!!<br/>启动中的定时任务修改"任务脚本"或"任务频率"后，会自动重启!!!<br/>
+        <p id="crontab-status">定时任务 <span class="layui-badge layui-bg-red">未启动</span> 请在项目根目录执行命令 <b>php think crontab start -d</b></p>
+    </blockquote>
+    <div class="layuimini-main">
+        <table id="currentTable" class="layui-table layui-hide" lay-filter="currentTable"
+               data-auth-add="{:auth('system.crontab/add')}"
+               data-auth-edit="{:auth('system.crontab/edit')}"
+               data-auth-ping="{:auth('system.crontab/ping')}"
+               data-auth-flow="{:auth('system.crontab/flow')}"
+               data-auth-relod="{:auth('system.crontab/relod')}"
+               data-auth-delete="{:auth('system.crontab/delete')}">
+        </table>
+    </div>
+</div>
+
+<script>
+    var typeOptions = {:json_encode($typeOptions)};
+</script>

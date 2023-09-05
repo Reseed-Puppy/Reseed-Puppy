@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Site</title>
+</head>
+<body>
+    <div>
+      <h4>已配置站点：</h4>
+      {% for site in existing_sites %}
+            <a >{{ site.siteName }}</a>
+      {% endfor %}
+    </div>
+    <h4>站点配置区域：</h4>
+    <form method="POST" action="/sitesubmit">
+        <label for="site">选择站点:</label>
+        <select name="site">
+            {% for site in sites %}
+            <option value="{{ site.id }}">{{ site.siteName }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="passkey">输入对应站点passkey:</label>
+        <input type="text" name="passkey" id="passkey">
+        <br>
+        <input type="submit" value="提交">
+    </form>
+    <h5>qb下载器配置区：</h5>
+    <form method="POST" action="/qbsubmit">
+        <label for="passkey">请输入下载器地址:</label>
+        <input type="text" name="qburl" id="qburl">
+        <br>
+        <label for="passkey">请输入端口:</label>
+        <input type="text" name="qbport" id="qbport">
+        <br>
+        <label for="passkey">请输入账号:</label>
+        <input type="text" name="qbusername" id="qbusername">
+        <br>
+        <label for="passkey">请输入密码:</label>
+        <input type="text" name="qbpassword" id="qbpassword">
+        <br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

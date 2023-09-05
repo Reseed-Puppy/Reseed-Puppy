@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{:sysconfig('site','site_name')}</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="icon" href="{:sysconfig('site', 'site_ico')}" type="image/x-icon">
+    <link rel="stylesheet" href="__STATIC__/admin/css/public.css?v={$version}" media="all">
+    <script>
+        window.CONFIG = {
+            ADMIN: "{$adminModuleName|default='admin'}",
+            CONTROLLER_JS_PATH: "{$thisControllerJsPath|default=''}",
+            ACTION: "{$thisAction|default=''}",
+            AUTOLOAD_JS: "{$autoloadJs|default='false'}",
+            IS_SUPER_ADMIN: "{$isSuperAdmin|default='false'}",
+            VERSION: "{$version|default='1.0.0'}",
+            CSRF_TOKEN: "{:token()}",
+        };
+        window.$variables = {$jsVariables|raw|default='null'};
+    </script>
+</head>
+<body>
+{__CONTENT__}
+<script src="__STATIC__/plugs/layui/layui.js?v={$version}" charset="utf-8"></script>
+<script src="__STATIC__/plugs/require/require.js?v={$version}" charset="utf-8"></script>
+<script src="__STATIC__/config-admin.js?v={$version}"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+    "name": "zhongshaofa/easyadmin",
+    "description": "基于ThinkPHP6.0和layui的快速开发的后台管理系统。",
+    "type": "project",
+    "keywords": [
+        "easyadmin",
+        "thinkphp",
+        "admin"
+    ],
+    "homepage": "http://easyadmin.99php.cn/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zhongshaofa",
+            "email": "2286732552@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.5",
+        "ext-json": "*",
+        "topthink/framework": "^6.0.0",
+        "topthink/think-orm": "^2.0",
+        "topthink/think-multi-app": "^1.0",
+        "topthink/think-view": "^1.0",
+        "topthink/think-captcha": "^3.0",
+        "topthink/think-filesystem": "^2.0",
+        "aliyuncs/oss-sdk-php": "^2.3",
+        "qcloud/cos-sdk-v5": "^2.0",
+        "qiniu/php-sdk": "^7.2",
+        "jianyan74/php-excel": "^1.0",
+        "cshaptx4869/http-crontab": "^2.0",
+        "guzzlehttp/guzzle": "^6.0",
+        "doctrine/annotations": "^1.13"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.2",
+        "topthink/think-trace":"^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app"
+        },
+        "psr-0": {
+            "": "extend/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "secure-http": false
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php think service:discover",
+            "@php think vendor:publish"
+        ]
+    }
+}

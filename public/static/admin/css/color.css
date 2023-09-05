@@ -1,0 +1,59 @@
+.green {
+    color: #11c26d !important;
+}
+
+.red {
+    color: #ff4c52 !important;
+}
+
+.cyan {
+    color: #0bb2d4 !important;
+}
+
+.purple {
+    color: #9463f7 !important;
+}
+
+.blue {
+    color: #3e8ef7 !important;
+}
+
+.orange {
+    color: #eb6709 !important;
+}
+
+.indigo {
+    color: #6610f2 !important;
+}
+
+.pink {
+    color: #e83e8c !important;
+}
+
+.teal {
+    color: #20c997 !important;
+}
+
+.white {
+    color: #fff !important;
+}
+
+.gray {
+    color: #6c757d !important;
+}
+
+.gray-dark {
+    color: #343a40 !important;
+}
+
+.secondary {
+    color: #6c757d !important;
+}
+
+.yellow {
+    color: rgb(255, 214, 102) !important;
+}
+
+.magenta {
+    color: #eb2f96 !important;
+}

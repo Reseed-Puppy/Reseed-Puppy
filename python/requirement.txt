@@ -1,0 +1,5 @@
+sanic
+pymysql
+qbittorrent-api
+bencodepy
+transmission-rpc

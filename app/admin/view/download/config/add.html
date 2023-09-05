@@ -1,0 +1,107 @@
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">下载器名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" class="layui-input" lay-verify="required" placeholder="请输入下载器名称" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">下载器类型</label>
+            <div class="layui-input-block">
+                <select name="type" lay-verify="required">
+                    <option value=''></option>
+                    {foreach $getTypeList as $k=>$v}
+                    <option value='{$k}' >{$v}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">下载器地址</label>
+            <div class="layui-input-block">
+                <input type="text" name="url" class="layui-input" lay-verify="required" placeholder="请输入下载器地址" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">下载器端口</label>
+            <div class="layui-input-block">
+                <input type="text" name="port" class="layui-input" lay-verify="required" placeholder="请输入下载器端口" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">下载器用户名</label>
+            <div class="layui-input-block">
+                <input type="text" name="username" class="layui-input" lay-verify="required" placeholder="请输入下载器用户名" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">下载器密码</label>
+            <div class="layui-input-block">
+                <input type="text" name="password" class="layui-input" lay-verify="required" placeholder="请输入下载器密码" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">下载器映射目录</label>
+            <div class="layui-input-block">
+                <input type="text" name="dir" class="layui-input" lay-verify="required" placeholder="请输入下载器映射目录" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">跳过hash校验</label>
+            <div class="layui-input-block">
+                <select name="skiphash" lay-verify="required">
+                    <option value=''></option>
+                    {foreach $getSkiphashList as $k=>$v}
+                    <option value='{$k}' >{$v}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">自动开始</label>
+            <div class="layui-input-block">
+                <select name="isaction" lay-verify="required">
+                    <option value=''></option>
+                    {foreach $getIsactionList as $k=>$v}
+                    <option value='{$k}' >{$v}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" onclick="connect()">连通性测试</button>
+        </div>
+
+    </form>
+    <script>
+        function connect() {
+            var selectedValue = $('select[name="type"]').val();
+            var formData = $('form').serializeArray();
+            // 遍历获取到的参数数组
+            $.each(formData, function(index, field) {
+                var fieldName = field.name;
+                var fieldValue = field.value;
+                if (fieldValue == '') {
+                    alert(fieldName + "不能为空")
+                    exit()
+                }
+            });
+            $.ajax({
+                url: '/admin/pyapi/index',
+                method: 'POST',
+                data: formData,
+                success: function(response) {
+                    alert(response.msg)
+                },
+                error: function(xhr, status, error) {
+                    // 处理请求错误
+                    console.error(error);
+                }
+            });
+        }
+    </script>
+</div>

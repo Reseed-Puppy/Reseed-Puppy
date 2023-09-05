@@ -1,0 +1,45 @@
+<style>
+    .layui-btn:not(.layui-btn-lg ):not(.layui-btn-sm):not(.layui-btn-xs) {
+        height: 34px;
+        line-height: 34px;
+        padding: 0 8px;
+    }
+</style>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <fieldset class="table-search-fieldset">
+            <legend>条件搜索</legend>
+            <form class="layui-form layui-form-pane form-search">
+                <div class="layui-form-item layui-inline">
+                    <label class="layui-form-label">关键字</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="keyword" class="layui-input" value="" placeholder="请输入关键字">
+                    </div>
+                </div>
+
+                <div class="layui-form-item layui-inline" style="margin-left: 115px">
+                    <button type="submit" class="layui-btn layui-btn-normal" data-type="tableSearch" lay-submit lay-filter="*"> 搜 索</button>
+                    <button type="reset" class="layui-btn layui-btn-primary"> 重 置</button>
+                </div>
+            </form>
+        </fieldset>
+
+        <table id="currentTable" class="layui-table layui-hide"
+               data-auth-add="{:auth('system.menu/add')}"
+               data-auth-edit="{:auth('system.menu/edit')}"
+               data-auth-delete="{:auth('system.menu/delete')}"
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>
+<script type="text/html" id="toolbar">
+    <button class="layui-btn layui-btn-sm layuimini-btn-primary" data-treetable-refresh><i class="fa fa-refresh"></i> </button>
+    {if auth('system.menu/add')}
+    <button class="layui-btn layui-btn-normal layui-btn-sm" data-open="system.menu/add" data-title="添加" data-full="true"><i class="fa fa-plus"></i> 添加</button>
+    {/if}
+    {if auth('system.menu/delete')}
+    <button class="layui-btn layui-btn-sm layui-btn-danger" data-url="system.menu/delete" data-treetable-delete="currentTableRenderId"><i class="fa fa-trash-o"></i> 删除</button>
+    {/if}
+    <button class="layui-btn layui-btn-sm layui-btn-primary" data-treetable-expand>展开所有</button>
+    <button class="layui-btn layui-btn-sm layui-btn-primary" data-treetable-fold>折叠所有</button>
+</script>
