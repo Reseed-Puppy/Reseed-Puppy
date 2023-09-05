@@ -1,20 +1,31 @@
 <div class="layuimini-container">
     <blockquote class="layui-elem-quote">
-        <b>注意</b>：<br/>定时器开始、暂停、重起都是在下一分钟开始生效!!!<br/>启动中的定时任务修改"任务脚本"或"任务频率"后，会自动重启!!!<br/>
-        <p id="crontab-status">定时任务 <span class="layui-badge layui-bg-red">未启动</span> 请在项目根目录执行命令 <b>php think crontab start -d</b></p>
+        <b>注意</b>：<br />定时器开始、暂停、重起都是在下一分钟开始生效!!!<br />启动中的定时任务修改"任务脚本"或"任务频率"后，会自动重启!!!<br />
+        <p id="crontab-status">定时任务 <span class="layui-badge layui-bg-red">未启动</span> 请在项目根目录执行命令 <b>php think crontab
+                start -d</b></p>
+                <button class="layui-btn layui-btn-sm layui-btn-danger" onclick="delreseed()">清理辅种缓存</button>
     </blockquote>
     <div class="layuimini-main">
-        <table id="currentTable" class="layui-table layui-hide" lay-filter="currentTable"
-               data-auth-add="{:auth('system.crontab/add')}"
-               data-auth-edit="{:auth('system.crontab/edit')}"
-               data-auth-ping="{:auth('system.crontab/ping')}"
-               data-auth-flow="{:auth('system.crontab/flow')}"
-               data-auth-relod="{:auth('system.crontab/relod')}"
-               data-auth-delete="{:auth('system.crontab/delete')}">
+        <table id="currentTable" class="layui-table layui-hide" lay-filter="currentTable" data-auth-add="{:auth('system.crontab/add')}" data-auth-edit="{:auth('system.crontab/edit')}" data-auth-ping="{:auth('system.crontab/ping')}" data-auth-flow="{:auth('system.crontab/flow')}"
+            data-auth-relod="{:auth('system.crontab/relod')}" data-auth-delete="{:auth('system.crontab/delete')}">
         </table>
     </div>
 </div>
 
 <script>
     var typeOptions = {:json_encode($typeOptions)};
+
+    function delreseed() {
+        $.ajax({
+            url: '/admin/pyapi/delReseed',
+            method: 'get',
+            success: function(response) {
+                alert(response.msg)
+            },
+            error: function(xhr, status, error) {
+                // 处理请求错误
+                console.error(error);
+            }
+        });
+    }
 </script>

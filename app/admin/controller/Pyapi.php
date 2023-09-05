@@ -8,7 +8,6 @@ use think\facade\Http;
 
 class Pyapi extends AdminController
 {
-
     public function index()
     {
         $postData = $_POST;
@@ -36,7 +35,26 @@ class Pyapi extends AdminController
             echo '请求错误';
         }
     }
-
+    public function delReseed()
+    {
+        $url = 'http://127.0.0.1:5000/delreseed';
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    
+        curl_close($ch);
+        if ($httpCode === 200) {
+            $responseData = json_decode($response);
+            // 处理接口返回的数据
+            return json($responseData);
+        } else {
+            // 处理请求错误
+            echo '请求错误';
+        }
+    }
     /**
      * 清理缓存接口
      */
