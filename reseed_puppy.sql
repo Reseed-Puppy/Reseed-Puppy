@@ -68,8 +68,9 @@ INSERT INTO `site_config` VALUES (3, 'ultrahd', 'https://ultrahd.net/', 'https:/
 INSERT INTO `site_config` VALUES (4, 'zmpt(织梦)', 'https://zmpt.cc/', 'https://zmpt.cc/api/pieces-hash', '改成你的', 0, 1693068549, 1693068549, NULL);
 INSERT INTO `site_config` VALUES (5, 'hdtime', 'https://hdtime.org/', 'https://hdtime.org/api/pieces-hash', '改成你的', 0, 1693068571, 1693068571, NULL);
 INSERT INTO `site_config` VALUES (6, '月月', 'https://pt.keepfrds.com', 'https://pt.keepfrds.com/api/torrents/pieces-hash', '改成你的', 0, 1693068600, 1693068600, NULL);
-INSERT INTO `site_config` VALUES (7, 'ptlsp', 'https://www.ptlsp.com/', 'https://www.ptlsp.com/api/torrents/pieces-hash', '改成你的', 0, 1693068651, 1693068651, NULL);
-INSERT INTO `site_config` VALUES (8, '憨憨', 'https://hhanclub.top/', 'https://hhanclub.top/npapi/torrents/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
+INSERT INTO `site_config` VALUES (7, 'ptlsp', 'https://www.ptlsp.com/', 'https://www.ptlsp.com/api/pieces-hash', '改成你的', 0, 1693068651, 1693068651, NULL);
+INSERT INTO `site_config` VALUES (8, '憨憨', 'https://hhanclub.top/', 'https://hhanclub.top/npapi/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
+INSERT INTO `site_config` VALUES (9, '大青虫', 'https://cyanbug.net/', 'https://cyanbug.net/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
 
 -- ----------------------------
 -- Table structure for system_admin
