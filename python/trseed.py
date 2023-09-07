@@ -6,7 +6,7 @@ import bencodepy
 import requests
 import hashlib
 import os
-logger = writeLog('tr_logger', 'log/reseed.log')
+logger = writeLog('tr_logger', '/reseed-puppy/python/log/reseed.log')
 def connect_to_transmission(tr):
   try:
     c = Client(host=tr['url'], port=tr['port'], username=tr['username'], password=tr["password"])

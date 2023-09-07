@@ -8,7 +8,7 @@ import requests
 import hashlib
 import json
 import os
-logger = writeLog('my_logger', 'log/reseed.log')
+logger = writeLog('my_logger', '/reseed-puppy/python/log/reseed.log')
 # 辅种主函数
 def seed():
   # 配置qbittorrentapi的连接参数以及尝试连接

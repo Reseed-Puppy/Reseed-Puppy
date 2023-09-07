@@ -7,7 +7,7 @@ import requests
 import hashlib
 import os
 
-logger = writeLog("qb_logger", "log/reseed.log")
+logger = writeLog("qb_logger", "/reseed-puppy/python/log/reseed.log")
 def connect_to_qbittorrent(qb):
   conn_info = dict(
     host=qb["url"],

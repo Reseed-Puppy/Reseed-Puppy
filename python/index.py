@@ -5,7 +5,7 @@ from sanic import Sanic
 from qbseed import qbseed, connect_to_qbittorrent
 from trseed import trseed, connect_to_transmission
 
-logger = writeLog("index_logger", "log/reseed.log")
+logger = writeLog("index_logger", "/reseed-puppy/python/log/reseed.log")
 app = Sanic(__name__)
 
 
