@@ -13,7 +13,7 @@ def connect_to_transmission(tr):
   except:
     logger.error('transmission连接失败')
     return 0
-  return 1
+  return c
 
 # 辅种主函数
 def trseed(tr):
@@ -23,7 +23,8 @@ def trseed(tr):
       logger.error('请先配置transmission的连接参数')
       return 0
   else:
-    if(connect_to_transmission(tr) == 0):
+    c = connect_to_transmission(tr)
+    if( c == 0):
       return 0
     # 配置种子文件夹路径
     folder_path = tr['dir']

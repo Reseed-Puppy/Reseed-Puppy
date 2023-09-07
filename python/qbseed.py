@@ -21,7 +21,7 @@ def connect_to_qbittorrent(qb):
   except qbittorrentapi.LoginFailed as e:
     logger.error("qbittorrent连接失败")
     return 0
-  return 1
+  return qbt_client
 
 # 辅种主函数
 def qbseed(qb):
@@ -32,7 +32,8 @@ def qbseed(qb):
         logger.error("请先配置qbittorrentapi的连接参数")
         return 0
     else:
-        if(connect_to_qbittorrent(qb)==0):
+        qbt_client = connect_to_qbittorrent(qb)
+        if(qbt_client==0):
           return 0
         # 配置种子文件夹路径
         folder_path = qb["dir"]

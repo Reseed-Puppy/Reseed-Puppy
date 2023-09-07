@@ -37,10 +37,10 @@ async def qbconnect(request):
     qb = {field: request.form.get(field) for field in required_fields}
     try:
         msg = connect_to_qbittorrent(qb)
-        if(msg == 1):
-            return json({"code": 200, "msg": "qbittorrent连接成功"})
-        else:
+        if(msg == 0):
             return json({"code": 200, "msg": "qbittorrent连接失败"})
+        else:
+            return json({"code": 200, "msg": "qbittorrent连接成功"})
     except Exception as e:
         logger.error(f"连接到qbittorrent时出错: {str(e)}")
         return json({"code": 200, "msg": str(e)})
@@ -52,10 +52,10 @@ async def trconnect(request):
     tr = {field: request.form.get(field) for field in required_fields}
     try:
         msg = connect_to_transmission(tr)
-        if(msg == 1):
-            return json({"code": 200, "msg": "transmission连接成功"})
-        else:
+        if(msg == 0):
             return json({"code": 200, "msg": "transmission连接失败"})
+        else:
+            return json({"code": 200, "msg": "transmission连接成功"})
     except Exception as e:
         logger.error(f"连接到transmission时出错: {str(e)}")
         return json({"code": 200, "msg": str(e)})
