@@ -54,41 +54,41 @@ services:
 
 在注册表查找 `reseed-puppy` 并拉取镜像，标签建议选择 `latest`，拉取映像可能需要一些时间，取决于网络情况
 
-![DSM_P1](./image/DSM_P1.png)
+![DSM_P1](../../wiki/image/DSM_P1.png)
 
 使用 `reseed-puppy` 运行容器
 
-![DSM_P2](./image/DSM_P2.png)
+![DSM_P2](../../wiki/image/DSM_P2.png)
 
 配置端口映射和目录映射
 
-![DSM_P3](./image/DSM_P3.png)
+![DSM_P3](../../wiki/image/DSM_P3.png)
 
 启动容器即可
 
-![DSM_P4](./image/DSM_P4.png)
+![DSM_P4](../../wiki/image/DSM_P4.png)
 
 # 威联通安装
 
 在映像中查找 `reseed-puppy` 并点击部署拉取映像，标签建议选择 `latest`，拉取映像可能需要一些时间，取决于网络情况
 
-![QNAP_P1](./image/QNAP_P1.png)
+![QNAP_P1](../../wiki/image/QNAP_P1.png)
 
 使用 `reseed-puppy` 运行容器
 
-![QNAP_P2](./image/QNAP_P2.png)
+![QNAP_P2](../../wiki/image/QNAP_P2.png)
 
 配置端口映射
 
-![QNAP_P3](./image/QNAP_P3.png)
+![QNAP_P3](../../wiki/image/QNAP_P3.png)
 
 配置目录映射
 
-![QNAP_P4](./image/QNAP_P4.png)
+![QNAP_P4](../../wiki/image/QNAP_P4.png)
 
 启动容器即可
 
-![QNAP_P5](./image/QNAP_P5.png)
+![QNAP_P5](../../wiki/image/QNAP_P5.png)
 
 # Unraid 安装
 
