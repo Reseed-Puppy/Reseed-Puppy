@@ -99,7 +99,7 @@ def trseed(tr):
                                 add_seed_to_cache(value)
                                 fz_array.append(f"{site['siteUrl']}download.php?id={response_json['data'][value]}&passkey={site['passkey']}")
                     except:
-                        logger.info(f"种子{torrent_id}在下载器中没有找到")
+                        logger.info(f"种子{info_hash_topieces[value]}在下载器中没有找到")
     logger.info("可辅种数：%d 个种子", len(fz_array))
     logger.info(fz_array)
     logger.info("辅种结束")
