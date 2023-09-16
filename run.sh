@@ -4,10 +4,14 @@ if [[ ! -d .git ]]; then
     git clone https://gitee.com/zxfsadly/reseed-puppy.git /tmp/reseed-puppy
     find /tmp/reseed-puppy -mindepth 1 -maxdepth 1 | xargs -I {} cp -r {} /reseed-puppy
     rm -rf /tmp/reseed-puppy
+    mv /reseed-puppy/run.sh /scripts/run.sh
+    chmod -R 777 /scripts/run.sh
 else
     git fetch --all
     git reset --hard origin/master
     git pull
+    mv /reseed-puppy/run.sh /scripts/run.sh
+    chmod -R 777 /scripts/run.sh
 fi
 # execute any pre-init scripts
 for i in /scripts/pre-init.d/*sh
