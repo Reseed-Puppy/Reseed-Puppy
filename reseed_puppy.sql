@@ -4,7 +4,7 @@
  Source Server         : reseed_puppy
  Source Server Type    : MySQL
  Source Server Version : 101103
- Source Host           : zxfjcyx.iok.la:3333
+ Source Host           : 127.0.0.1
  Source Schema         : reseed_puppy
 
  Target Server Type    : MySQL
@@ -72,7 +72,16 @@ INSERT INTO `site_config` VALUES (7, 'ptlsp', 'https://www.ptlsp.com/', 'https:/
 INSERT INTO `site_config` VALUES (8, '憨憨', 'https://hhanclub.top/', 'https://hhanclub.top/npapi/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
 INSERT INTO `site_config` VALUES (9, '大青虫', 'https://cyanbug.net/', 'https://cyanbug.net/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
 INSERT INTO `site_config` VALUES (10, 'icc', 'https://www.icc2022.com/', 'https://www.icc2022.com/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
-
+INSERT INTO `site_config` VALUES (11, '1ptba', 'https://1ptba.com/', 'https://1ptba.com/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
+INSERT INTO `site_config` VALUES (12, 'ptcafe', 'https://ptcafe.club/', 'https://ptcafe.club/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
+INSERT INTO `site_config` VALUES (13, 'kufei', 'https://kufei.org/', 'https://kufei.org/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
+INSERT INTO `site_config` VALUES (14, 'rousi', 'https://rousi.zip/', 'https://rousi.zip/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
+INSERT INTO `site_config` VALUES (15, '东樱', 'https://wintersakura.net/', 'https://wintersakura.net/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
+INSERT INTO `site_config` VALUES (16, 'oshen', 'https://www.oshen.win/', 'https://www.oshen.win/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
+INSERT INTO `site_config` VALUES (17, '明教', 'https://hdpt.xyz/', 'https://hdpt.xyz/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
+INSERT INTO `site_config` VALUES (18, '2xfree', 'https://pt.2xfree.org/', 'https://pt.2xfree.org/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
+INSERT INTO `site_config` VALUES (19, '阿童木', 'https://hdatmos.club/', 'https://hdatmos.club/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
+INSERT INTO `site_config` VALUES (20, '3wmg明教', 'https://www.3wmg.com/', 'https://www.3wmg.com/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
 
 -- ----------------------------
 -- Table structure for system_admin
