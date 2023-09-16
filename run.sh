@@ -5,12 +5,14 @@ if [[ ! -d .git ]]; then
     git clone https://gitee.com/zxfsadly/reseed-puppy.git /tmp/reseed-puppy
     find /tmp/reseed-puppy -mindepth 1 -maxdepth 1 | xargs -I {} cp -r {} /reseed-puppy
     rm -rf /tmp/reseed-puppy
+    cp reseed_puppy.sql /docker-entrypoint-initdb.d/reseed_puppy.sql
     mv /reseed-puppy/run.sh /scripts/run.sh
     chmod -R 777 /scripts/run.sh
 else
     git fetch --all
     git reset --hard origin/main
     git pull
+    cp reseed_puppy.sql /docker-entrypoint-initdb.d/reseed_puppy.sql
     mv /reseed-puppy/run.sh /scripts/run.sh
     chmod -R 777 /scripts/run.sh
 fi
