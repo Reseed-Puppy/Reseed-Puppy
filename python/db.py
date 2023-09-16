@@ -7,7 +7,8 @@ connection = pymysql.connect(
     host='127.0.0.1',
     user='root',
     password='123456',
-    db='reseed_puppy'
+    db='reseed_puppy',
+    autocommit=True
 )
 
 def getDownloadInfo(download_id):
