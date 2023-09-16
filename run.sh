@@ -1,4 +1,5 @@
 #!/bin/sh
+git config --global --add safe.directory /reseed-puppy
 cd /reseed-puppy
 if [[ ! -d .git ]]; then
     git clone https://gitee.com/zxfsadly/reseed-puppy.git /tmp/reseed-puppy
