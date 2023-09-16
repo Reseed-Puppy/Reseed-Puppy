@@ -1,4 +1,6 @@
 # 详细项目说明在wiki页面，[请点击此处跳转](https://github.com/Reseed-Puppy/Reseed-Puppy/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%BC%95)
+# 支持站点
+#### 红叶、憨憨、猪猪、ultrahd、织梦、hdtime、月月、ptlsp、icc、农场、你堡、肉丝、kufei、咖啡、1ptba、东樱、oshen、明教、2xfree、阿童木、3wmg
 镜像包含了以下环境：
 
 - PHP 7.4.33
