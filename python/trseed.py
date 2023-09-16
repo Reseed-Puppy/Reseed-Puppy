@@ -84,10 +84,9 @@ def trseed(tr):
                 for value in response_json['data']:
                     if(value == "passkey" or value=="pieces_hash"):
                         continue
-                    # 有查询到结果的种子通过pieces_hash来获取info_hash，再通过info_hash来获取种子的保存路径和状态
-                    torrent_info = c.get_torrent(torrent_id=info_hash_topieces[value])
-                    # 判断种子是否已经在下载器中
-                    if (torrent_info):
+                    try:
+                        # 有查询到结果的种子通过pieces_hash来获取info_hash，再通过info_hash来获取种子的保存路径和状态
+                        torrent_info = c.get_torrent(torrent_id=info_hash_topieces[value])
                         # 获取种子的保存路径和状态
                         save_path = torrent_info.download_dir
                         state = torrent_info.status
@@ -99,7 +98,8 @@ def trseed(tr):
                                             torrent_name_topieces[value])
                                 add_seed_to_cache(value)
                                 fz_array.append(f"{site['siteUrl']}download.php?id={response_json['data'][value]}&passkey={site['passkey']}")
-
+                    except:
+                        logger.info(f"种子{torrent_id}在下载器中没有找到")
     logger.info("可辅种数：%d 个种子", len(fz_array))
     logger.info(fz_array)
     logger.info("辅种结束")
