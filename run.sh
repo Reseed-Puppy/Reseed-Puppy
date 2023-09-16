@@ -9,7 +9,7 @@ if [[ ! -d .git ]]; then
     chmod -R 777 /scripts/run.sh
 else
     git fetch --all
-    git reset --hard origin/master
+    git reset --hard origin/main
     git pull
     mv /reseed-puppy/run.sh /scripts/run.sh
     chmod -R 777 /scripts/run.sh
