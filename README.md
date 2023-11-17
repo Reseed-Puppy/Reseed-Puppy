@@ -1,20 +1,18 @@
 # 详细项目说明在wiki页面，[请点击此处跳转](https://github.com/Reseed-Puppy/Reseed-Puppy/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%BC%95)
-# 支持站点
-#### 红叶、憨憨、猪猪、ultrahd、织梦、hdtime、月月、ptlsp、icc、农场、你堡、肉丝、kufei、咖啡、1ptba、东樱、oshen、明教、2xfree、阿童木、3wmg、象站、聆音
+# 内置辅种模式支持站点
+#### 红叶、憨憨、猪猪、ultrahd、织梦、hdtime、月月、ptlsp、icc、农场、你堡、肉丝、kufei、咖啡、1ptba、东樱、oshen、明教、2xfree、阿童木、3wmg、象站、聆音、okpt
+# Jackett辅种模式支持站点
+#### 只要是Jackett中支持的站点都支持
 镜像包含了以下环境：
 
 - PHP 7.4.33
-- Python 3.9.17
 
-容器使用如下端口，通常情况下只需要映射 1919 端口，其他端口不需要映射到宿主机：
-
-- 1919: Web 管理页面
-- 5000: Python 程序后端
+容器使用Host模式，否则会请求失败
 
 功能正常使用，需要映射 qBittorrent 或 Transmission 的种子目录，如果需要持久化储存数据，需要将数据库目录映射到宿主机：
 
 - /path/to/qBittorrent/config/qBittorrent/BT_backup:/qb
-- /path/to/Transmission/config/torrents:tr
+- /path/to/Transmission/config/torrents:/tr
 - /path/to/database:/reseed-puppy-php/database
 
 # 编译安装
@@ -26,9 +24,10 @@
 ```bash
 docker run -d \
   --name=reseed-puppy \
-  -p 1919:1919 \
-  -v /path/to/database:/reseed-puppy-php/database \
-  -v /path/to/torrents:/torrents \
+  -v /path/to/database:/reseed-puppy-php/database \（这是映射数据库目录）
+  -v /path/to/qbtorrents:/qbtorrents \(映射一个qb种子目录，如果有的话)
+  -v /path/to/trtorrents:/trtorrents \(映射一个tr种子目录，如果有的话)
+  --network host \（必须要使用host模式，不然很多站点请求会失败）
   --restart unless-stopped \
   szzhoubanxian/reseed-puppy:latest
 ```
@@ -45,8 +44,7 @@ services:
     volumes:
       - /path/to/database:/reseed-puppy-php/database
       - /path/to/torrents:/torrents
-    ports:
-      - 1919:1919
+    network_mode: host
     restart: unless-stopped
 ```
 
