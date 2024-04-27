@@ -82,6 +82,7 @@ INSERT INTO `site_config` VALUES (17, '明教', 'https://hdpt.xyz/', 'https://hd
 INSERT INTO `site_config` VALUES (18, '2xfree', 'https://pt.2xfree.org/', 'https://pt.2xfree.org/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
 INSERT INTO `site_config` VALUES (19, '阿童木', 'https://hdatmos.club/', 'https://hdatmos.club/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
 INSERT INTO `site_config` VALUES (20, '3wmg明教', 'https://www.3wmg.com/', 'https://www.3wmg.com/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
+INSERT INTO `site_config` VALUES (21, '花梨月下', 'https://pt.ecust.pp.ua/', 'https://pt.ecust.pp.ua/api/pieces-hash', '改成你的', 0, 1693068734, 1693068734, NULL);
 
 -- ----------------------------
 -- Table structure for system_admin
